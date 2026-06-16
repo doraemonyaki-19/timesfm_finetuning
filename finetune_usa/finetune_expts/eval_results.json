@@ -1,0 +1,25 @@
+{
+  "region": "usa",
+  "generated": "2026-05-14",
+  "eval_horizon": 120,
+  "eval_tickers": [
+    "AAPL",
+    "GOOG",
+    "MSFT"
+  ],
+  "baseline_mape": {
+    "AAPL": 3.582,
+    "GOOG": 9.459,
+    "MSFT": 13.307,
+    "overall": 8.783
+  },
+  "finetuned_mape": {
+    "AAPL": 3.59,
+    "GOOG": 9.244,
+    "MSFT": 13.434,
+    "overall": 8.756
+  },
+  "improvement_pp": 0.027,
+  "verdict": "IMPROVED",
+  "best_checkpoint_kept": true
+}

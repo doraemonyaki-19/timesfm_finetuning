@@ -1,0 +1,5 @@
+[23:23:02] ============================================================
+[23:23:02] REGION: JAPAN
+[23:23:02] ============================================================
+[23:23:02] Step 1: Training...
+[23:23:02] Command: C:\Python314\python.exe C:\Users\ylchen\workspace\timesfm\src\timesfm\finetune_timesfm.py --data-dir C:\Users\ylchen\workspace\timesfm\finetune_japan\data\train --save-dir C:\Users\ylchen\workspace\timesfm\finetune_japan\checkpoints\run1 --epochs 50 --batch-size 8 --lr 1e-4 --optimizer adamw --weight-decay 0.01 --freeze-layers 17 --accumulation-steps 16 --warmup-epochs 5 --early-stopping 15 --max-context 512 --horizon 128 --no-epoch-ckpts

@@ -1,0 +1,25 @@
+{
+  "region": "china",
+  "generated": "2026-03-11",
+  "eval_horizon": 120,
+  "eval_tickers": [
+    "0388.HK",
+    "2382.HK",
+    "1177.HK"
+  ],
+  "baseline_mape": {
+    "0388.HK": 4.052,
+    "2382.HK": 21.322,
+    "1177.HK": 31.356,
+    "overall": 18.91
+  },
+  "finetuned_mape": {
+    "0388.HK": 7.122,
+    "2382.HK": 26.265,
+    "1177.HK": 37.981,
+    "overall": 23.789
+  },
+  "improvement_pp": -4.879,
+  "verdict": "REGRESSED",
+  "best_checkpoint_kept": false
+}

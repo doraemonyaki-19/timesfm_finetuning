@@ -1,0 +1,29 @@
+[14:36:07] ============================================================
+[14:36:07] REGION: EUROPE
+[14:36:07] ============================================================
+[14:36:07] Step 1: Training...
+[14:36:07] Command: C:\Users\ylchen\workspace\timesfm\.venv\Scripts\python.exe C:\Users\ylchen\workspace\timesfm\src\timesfm\finetune_timesfm.py --data-dir C:\Users\ylchen\workspace\timesfm\finetune_europe\data\train --save-dir C:\Users\ylchen\workspace\timesfm\finetune_europe\checkpoints\run1 --epochs 50 --batch-size 8 --lr 1e-4 --optimizer adamw --weight-decay 0.01 --freeze-layers 17 --accumulation-steps 16 --warmup-epochs 5 --early-stopping 15 --max-context 512 --horizon 128 --no-epoch-ckpts
+[15:07:08] Training complete.
+[15:07:08] 
+Step 2: Downloading eval data for ['UL', 'EADSF', 'VWAGY']...
+[15:07:10] Eval tickers: ['UL', 'EADSF', 'VWAGY']
+[15:07:10] 
+Step 3: Evaluating pretrained baseline (google/timesfm-2.5-200m-pytorch)...
+[15:07:15] Baseline MAPE: {'UL': 3.978, 'EADSF': 4.194, 'VWAGY': 5.93, 'overall': 4.701}
+[15:07:15] 
+Step 4: Evaluating finetuned best/ (C:\Users\ylchen\workspace\timesfm\finetune_europe\checkpoints\run1\best)...
+[15:07:18] Finetuned MAPE: {'UL': 3.865, 'EADSF': 4.037, 'VWAGY': 5.796, 'overall': 4.566}
+[15:07:18] 
+Step 5: Decision
+[15:07:18]   Baseline MAPE: 4.701%
+[15:07:18]   Finetuned MAPE: 4.566%
+[15:07:18]   Improvement: +0.135pp
+[15:07:18]   IMPROVEMENT: +0.135pp. Keeping best/ checkpoint.
+[15:07:18] 
+Results saved: C:\Users\ylchen\workspace\timesfm\finetune_europe\finetune_expts\eval_results.json
+[15:07:18] 
+Checkpoint disk usage:
+[15:07:18]   best/  925 MB
+[15:07:18]   last/  925 MB
+[15:07:18] 
+Done: EUROPE ¡X IMPROVED

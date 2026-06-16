@@ -1,0 +1,41 @@
+{
+  "args": {
+    "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\model",
+    "tickers": "0388.HK,2382.HK,1177.HK",
+    "horizons": "120",
+    "cache_dir": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\finetune_china\\data\\eval",
+    "max_context": 512,
+    "n_windows": 15,
+    "base_model": "C:/Users/ylchen/workspace/timesfm_finetuning/model",
+    "seed": 42,
+    "strict_tickers": false,
+    "results_file": null
+  },
+  "per_ticker": {
+    "0388.HK": {
+      "120": {
+        "mape": 10.851878213882447,
+        "dir_acc": 48.23529411764706
+      }
+    },
+    "2382.HK": {
+      "120": {
+        "mape": 15.485805702209472,
+        "dir_acc": 47.675070028011206
+      }
+    },
+    "1177.HK": {
+      "120": {
+        "mape": 25.03224973678589,
+        "dir_acc": 48.627450980392155
+      }
+    }
+  },
+  "average": {
+    "120": {
+      "mape": 17.123311217625936,
+      "dir_acc": 48.17927170868347
+    }
+  },
+  "primary_120d_mape": 17.123311217625936
+}

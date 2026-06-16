@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Read(//c/Users/ylchen/workspace/timesfm/**)",
+      "Bash(source .venv/Scripts/activate)",
+      "Bash(python scripts/sim_2week_live.py)"
+    ]
+  }
+}

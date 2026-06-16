@@ -1,0 +1,25 @@
+{
+  "region": "europe",
+  "generated": "2026-03-11",
+  "eval_horizon": 120,
+  "eval_tickers": [
+    "UL",
+    "EADSF",
+    "VWAGY"
+  ],
+  "baseline_mape": {
+    "UL": 3.978,
+    "EADSF": 4.194,
+    "VWAGY": 5.93,
+    "overall": 4.701
+  },
+  "finetuned_mape": {
+    "UL": 3.865,
+    "EADSF": 4.037,
+    "VWAGY": 5.796,
+    "overall": 4.566
+  },
+  "improvement_pp": 0.135,
+  "verdict": "IMPROVED",
+  "best_checkpoint_kept": true
+}

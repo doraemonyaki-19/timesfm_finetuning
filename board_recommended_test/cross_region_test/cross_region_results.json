@@ -1,0 +1,551 @@
+{
+  "date": "2026-04-13",
+  "horizons": [
+    60,
+    120
+  ],
+  "n_windows": 15,
+  "window_step": 5,
+  "tests": [
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "AAPL",
+      "horizon": 60,
+      "bl_mape": 4.749,
+      "ft_mape": 4.764,
+      "delta_pp": 0.015,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "AAPL",
+      "horizon": 120,
+      "bl_mape": 12.973,
+      "ft_mape": 12.158,
+      "delta_pp": -0.816,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "AMZN",
+      "horizon": 60,
+      "bl_mape": 5.562,
+      "ft_mape": 6.069,
+      "delta_pp": 0.506,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "AMZN",
+      "horizon": 120,
+      "bl_mape": 4.701,
+      "ft_mape": 4.637,
+      "delta_pp": -0.065,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "BA",
+      "horizon": 60,
+      "bl_mape": 9.848,
+      "ft_mape": 8.749,
+      "delta_pp": -1.099,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "BA",
+      "horizon": 120,
+      "bl_mape": 6.783,
+      "ft_mape": 8.85,
+      "delta_pp": 2.067,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "CVX",
+      "horizon": 60,
+      "bl_mape": 10.107,
+      "ft_mape": 9.159,
+      "delta_pp": -0.948,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "CVX",
+      "horizon": 120,
+      "bl_mape": 8.584,
+      "ft_mape": 8.372,
+      "delta_pp": -0.213,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "GOOGL",
+      "horizon": 60,
+      "bl_mape": 8.991,
+      "ft_mape": 10.816,
+      "delta_pp": 1.824,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "GOOGL",
+      "horizon": 120,
+      "bl_mape": 22.178,
+      "ft_mape": 23.422,
+      "delta_pp": 1.244,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "GS",
+      "horizon": 60,
+      "bl_mape": 7.346,
+      "ft_mape": 8.256,
+      "delta_pp": 0.91,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "GS",
+      "horizon": 120,
+      "bl_mape": 8.021,
+      "ft_mape": 11.389,
+      "delta_pp": 3.367,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "JPM",
+      "horizon": 60,
+      "bl_mape": 4.601,
+      "ft_mape": 4.366,
+      "delta_pp": -0.235,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "JPM",
+      "horizon": 120,
+      "bl_mape": 3.309,
+      "ft_mape": 5.195,
+      "delta_pp": 1.885,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "KO",
+      "horizon": 60,
+      "bl_mape": 6.247,
+      "ft_mape": 5.323,
+      "delta_pp": -0.924,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "KO",
+      "horizon": 120,
+      "bl_mape": 6.416,
+      "ft_mape": 5.885,
+      "delta_pp": -0.531,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "META",
+      "horizon": 60,
+      "bl_mape": 9.384,
+      "ft_mape": 8.917,
+      "delta_pp": -0.466,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "META",
+      "horizon": 120,
+      "bl_mape": 15.38,
+      "ft_mape": 9.776,
+      "delta_pp": -5.605,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "MSFT",
+      "horizon": 60,
+      "bl_mape": 8.661,
+      "ft_mape": 9.685,
+      "delta_pp": 1.025,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "MSFT",
+      "horizon": 120,
+      "bl_mape": 7.183,
+      "ft_mape": 8.034,
+      "delta_pp": 0.852,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "NVDA",
+      "horizon": 60,
+      "bl_mape": 3.958,
+      "ft_mape": 4.493,
+      "delta_pp": 0.536,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "NVDA",
+      "horizon": 120,
+      "bl_mape": 7.948,
+      "ft_mape": 10.025,
+      "delta_pp": 2.076,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "UNH",
+      "horizon": 60,
+      "bl_mape": 12.36,
+      "ft_mape": 11.793,
+      "delta_pp": -0.567,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "EU_ckpt -> US_tickers",
+      "ticker": "UNH",
+      "horizon": 120,
+      "bl_mape": 14.956,
+      "ft_mape": 14.646,
+      "delta_pp": -0.31,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "ASML",
+      "horizon": 60,
+      "bl_mape": 15.236,
+      "ft_mape": 15.677,
+      "delta_pp": 0.441,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "ASML",
+      "horizon": 120,
+      "bl_mape": 24.848,
+      "ft_mape": 24.855,
+      "delta_pp": 0.007,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "AZN",
+      "horizon": 60,
+      "bl_mape": 8.314,
+      "ft_mape": 9.233,
+      "delta_pp": 0.919,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "AZN",
+      "horizon": 120,
+      "bl_mape": 14.959,
+      "ft_mape": 16.151,
+      "delta_pp": 1.192,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "DEO",
+      "horizon": 60,
+      "bl_mape": 5.604,
+      "ft_mape": 9.845,
+      "delta_pp": 4.241,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "DEO",
+      "horizon": 120,
+      "bl_mape": 9.617,
+      "ft_mape": 15.954,
+      "delta_pp": 6.336,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "EADSF",
+      "horizon": 60,
+      "bl_mape": 6.528,
+      "ft_mape": 5.555,
+      "delta_pp": -0.973,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "EADSF",
+      "horizon": 120,
+      "bl_mape": 8.559,
+      "ft_mape": 8.462,
+      "delta_pp": -0.097,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "NVO",
+      "horizon": 60,
+      "bl_mape": 19.87,
+      "ft_mape": 24.356,
+      "delta_pp": 4.487,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "NVO",
+      "horizon": 120,
+      "bl_mape": 22.887,
+      "ft_mape": 31.39,
+      "delta_pp": 8.503,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "SAP",
+      "horizon": 60,
+      "bl_mape": 17.056,
+      "ft_mape": 12.444,
+      "delta_pp": -4.612,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "SAP",
+      "horizon": 120,
+      "bl_mape": 23.342,
+      "ft_mape": 16.149,
+      "delta_pp": -7.193,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "SHEL",
+      "horizon": 60,
+      "bl_mape": 5.252,
+      "ft_mape": 5.956,
+      "delta_pp": 0.704,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "SHEL",
+      "horizon": 120,
+      "bl_mape": 6.506,
+      "ft_mape": 6.092,
+      "delta_pp": -0.413,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "UL",
+      "horizon": 60,
+      "bl_mape": 4.416,
+      "ft_mape": 4.172,
+      "delta_pp": -0.244,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "UL",
+      "horizon": 120,
+      "bl_mape": 3.897,
+      "ft_mape": 4.077,
+      "delta_pp": 0.18,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "VWAGY",
+      "horizon": 60,
+      "bl_mape": 7.232,
+      "ft_mape": 6.842,
+      "delta_pp": -0.39,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "JP_ckpt -> EU_tickers",
+      "ticker": "VWAGY",
+      "horizon": 120,
+      "bl_mape": 6.241,
+      "ft_mape": 7.004,
+      "delta_pp": 0.763,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "4502.T",
+      "horizon": 60,
+      "bl_mape": 10.598,
+      "ft_mape": 9.913,
+      "delta_pp": -0.684,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "4502.T",
+      "horizon": 120,
+      "bl_mape": 8.458,
+      "ft_mape": 7.927,
+      "delta_pp": -0.531,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "4661.T",
+      "horizon": 60,
+      "bl_mape": 8.156,
+      "ft_mape": 7.947,
+      "delta_pp": -0.208,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "4661.T",
+      "horizon": 120,
+      "bl_mape": 12.808,
+      "ft_mape": 13.006,
+      "delta_pp": 0.198,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "6758.T",
+      "horizon": 60,
+      "bl_mape": 12.049,
+      "ft_mape": 12.965,
+      "delta_pp": 0.916,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "6758.T",
+      "horizon": 120,
+      "bl_mape": 12.187,
+      "ft_mape": 12.154,
+      "delta_pp": -0.033,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "6902.T",
+      "horizon": 60,
+      "bl_mape": 4.349,
+      "ft_mape": 4.677,
+      "delta_pp": 0.329,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "6902.T",
+      "horizon": 120,
+      "bl_mape": 4.47,
+      "ft_mape": 5.096,
+      "delta_pp": 0.626,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "7203.T",
+      "horizon": 60,
+      "bl_mape": 8.86,
+      "ft_mape": 8.003,
+      "delta_pp": -0.857,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "7203.T",
+      "horizon": 120,
+      "bl_mape": 17.106,
+      "ft_mape": 14.764,
+      "delta_pp": -2.343,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "7974.T",
+      "horizon": 60,
+      "bl_mape": 14.699,
+      "ft_mape": 16.384,
+      "delta_pp": 1.686,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "7974.T",
+      "horizon": 120,
+      "bl_mape": 14.66,
+      "ft_mape": 15.401,
+      "delta_pp": 0.741,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "8035.T",
+      "horizon": 60,
+      "bl_mape": 14.872,
+      "ft_mape": 14.635,
+      "delta_pp": -0.237,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "8035.T",
+      "horizon": 120,
+      "bl_mape": 26.594,
+      "ft_mape": 25.243,
+      "delta_pp": -1.351,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "8306.T",
+      "horizon": 60,
+      "bl_mape": 6.474,
+      "ft_mape": 6.533,
+      "delta_pp": 0.059,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "8306.T",
+      "horizon": 120,
+      "bl_mape": 9.398,
+      "ft_mape": 9.375,
+      "delta_pp": -0.023,
+      "result": "IMPROVED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "9984.T",
+      "horizon": 60,
+      "bl_mape": 14.594,
+      "ft_mape": 15.588,
+      "delta_pp": 0.994,
+      "result": "REGRESSED"
+    },
+    {
+      "test": "US_ckpt -> JP_tickers",
+      "ticker": "9984.T",
+      "horizon": 120,
+      "bl_mape": 29.61,
+      "ft_mape": 27.333,
+      "delta_pp": -2.278,
+      "result": "IMPROVED"
+    }
+  ]
+}

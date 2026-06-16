@@ -1,0 +1,59 @@
+# Technology
+ADBE
+CRM
+INTC
+CSCO
+IBM
+ORCL
+
+# Health Care
+PFE
+MRK
+ABBV
+TMO
+DHR
+
+# Financials
+BAC
+WFC
+MS
+BLK
+
+# Energy
+CVX
+COP
+SLB
+
+# Consumer Staples
+PEP
+COST
+MDLZ
+CL
+
+# Industrials
+HON
+GE
+UNP
+LMT
+
+# Consumer Discretionary
+AMZN
+HD
+MCD
+NKE
+SBUX
+
+# Utilities
+NEE
+DUK
+SO
+
+# Real Estate
+AMT
+PLD
+EQIX
+
+# Materials
+LIN
+SHW
+APD

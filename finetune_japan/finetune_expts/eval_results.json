@@ -1,0 +1,25 @@
+{
+  "region": "japan",
+  "generated": "2026-03-11",
+  "eval_horizon": 120,
+  "eval_tickers": [
+    "8035.T",
+    "6902.T",
+    "4661.T"
+  ],
+  "baseline_mape": {
+    "8035.T": 34.943,
+    "6902.T": 2.883,
+    "4661.T": 19.627,
+    "overall": 19.151
+  },
+  "finetuned_mape": {
+    "8035.T": 35.783,
+    "6902.T": 3.251,
+    "4661.T": 21.919,
+    "overall": 20.318
+  },
+  "improvement_pp": -1.167,
+  "verdict": "REGRESSED",
+  "best_checkpoint_kept": false
+}

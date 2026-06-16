@@ -1,0 +1,81 @@
+# Sector Router Configuration
+# Board-adopted policies and restrictions for TimesFM regional finetuning.
+# Loaded by scripts/sector_router.py at startup.
+
+# ── Routing policies ──────────────────────────────────────────────────────
+# Per region: "simple" = horizon-only rule, "router" = per-ticker tier labels.
+# Board review 2026-04-08: simple for US/JP/EU, router for China only.
+region_policy:
+  us: simple
+  japan: simple
+  europe: simple
+  china: router
+
+# Simple rule: use finetuned model at horizon >= this, baseline below.
+simple_rule_ft_min_horizon: 60
+
+# Horizons at or below this are flagged as noise in reports.
+noise_horizon_max: 14
+
+# ── Blocked cells ─────────────────────────────────────────────────────────
+# Region/horizon pairs where OOS accuracy is too low to deploy.
+# Forecast command refuses these unless --force is used.
+# Board review 2026-04-11.
+blocked_cells:
+  us: [120]    # 28.9% directional accuracy
+
+# ── No-short blocklist ────────────────────────────────────────────────────
+# Tickers where shorting is prohibited. Two sources:
+#   (a) Sovereign-adjacent / political risk (China names, board review 2026-04-11)
+#   (b) Model directional failure on shorts (board review 2026-04-11, Burry)
+# Forecast command overrides SHORT to SHORT-BLOCKED (treated as FLAT).
+no_short_blocklist:
+  - "0388.HK"   # HKEX — sovereign-adjacent exchange operator
+  - "0005.HK"   # HSBC Holdings (HK listing) — sovereign-adjacent
+  - "0941.HK"   # China Mobile — sovereign-adjacent
+  - "8306.T"    # MUFG — yen regime change; model shorts into rallies (-21.99% OOS worst)
+  - "9984.T"    # SoftBank — high volatility; model cannot predict direction (-25.01% IS worst)
+  - "NVO"       # Novo Nordisk — GLP-1 narrative overpowers model (-18.49% OOS worst)
+  - "VWAGY"     # Volkswagen — war-regime pricing; model trained pre-war (-16.55% IS worst)
+  - "GOOGL"     # Alphabet — model systematically wrong on direction at 120d (-23.30% IS worst)
+  - "MSFT"      # Microsoft — model wrong on direction; -23% MAPE regression (-8.43% IS worst)
+
+# ── Dead zone sweep thresholds ────────────────────────────────────────────
+# Thresholds tested during build. If |predicted_return| < threshold, go flat.
+dead_zone_thresholds: [0.0, 0.005, 0.01, 0.02, 0.05]
+
+# ── Model inference ───────────────────────────────────────────────────────
+max_context: 512
+
+forecast_config:
+  normalize_inputs: true
+  use_continuous_quantile_head: true
+  force_flip_invariance: true
+  infer_is_positive: true
+  fix_quantile_crossing: true
+
+# ── Region definitions ────────────────────────────────────────────────────
+regions:
+  us:
+    eval_tickers: [NVDA, UNH, GS, CVX, KO, BA]
+    train_tickers: [AAPL, MSFT, AMZN, GOOGL, META, JPM]
+    checkpoint: C:\Users\ylchen\workspace\timesfm_finetuning\finetune_usa\checkpoints\best
+    label: run4
+
+  japan:
+    eval_tickers: ["8035.T", "6902.T", "4661.T"]
+    train_tickers: ["7203.T", "6758.T", "9984.T", "8306.T", "4502.T", "7974.T"]
+    checkpoint: finetune_japan/checkpoints/run_glia_t2_r2a/best
+    label: hdecay1.0
+
+  europe:
+    eval_tickers: [UL, EADSF, VWAGY]
+    train_tickers: [ASML, SAP, NVO, AZN, SHEL, DEO]
+    checkpoint: finetune_europe/checkpoints/run_glia_v2_1a/best
+    label: EUv2
+
+  china:
+    eval_tickers: ["0388.HK", "2382.HK", "1177.HK"]
+    train_tickers: ["0700.HK", "0941.HK", "2318.HK", "1299.HK", "0005.HK", "0001.HK"]
+    checkpoint: finetune_china/checkpoints/run_glia_2a/best
+    label: Glia2a

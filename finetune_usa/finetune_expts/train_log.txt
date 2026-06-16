@@ -1,0 +1,29 @@
+[01:16:38] ============================================================
+[01:16:38] REGION: USA
+[01:16:38] ============================================================
+[01:16:38] Step 1: Training...
+[01:16:38] Command: C:\Python314\python.exe C:\Users\ylchen\workspace\timesfm\src\timesfm\finetune_timesfm.py --data-dir C:\Users\ylchen\workspace\timesfm\finetune_usa\data\train --save-dir C:\Users\ylchen\workspace\timesfm\finetune_usa\checkpoints\run1 --epochs 5 --batch-size 8 --lr 1e-5 --optimizer adamw --weight-decay 0.01 --freeze-layers 22 --accumulation-steps 16 --warmup-epochs 0 --early-stopping 5 --max-context 512 --min-context 256 --horizon 128 --stride 32 --horizon-loss-decay 0.1 --no-epoch-ckpts
+[01:26:36] Training complete.
+[01:26:36] 
+Step 2: Downloading eval data for ['AAPL', 'GOOG', 'MSFT']...
+[01:26:38] Eval tickers: ['AAPL', 'GOOG', 'MSFT']
+[01:26:38] 
+Step 3: Evaluating pretrained baseline (google/timesfm-2.5-200m-pytorch)...
+[01:26:41] Baseline MAPE: {'AAPL': 3.582, 'GOOG': 9.459, 'MSFT': 13.307, 'overall': 8.783}
+[01:26:41] 
+Step 4: Evaluating finetuned best/ (C:\Users\ylchen\workspace\timesfm\finetune_usa\checkpoints\run1\best)...
+[01:26:43] Finetuned MAPE: {'AAPL': 3.59, 'GOOG': 9.244, 'MSFT': 13.434, 'overall': 8.756}
+[01:26:43] 
+Step 5: Decision
+[01:26:43]   Baseline MAPE: 8.783%
+[01:26:43]   Finetuned MAPE: 8.756%
+[01:26:43]   Improvement: +0.027pp
+[01:26:43]   IMPROVEMENT: +0.027pp. Keeping best/ checkpoint.
+[01:26:43] 
+Results saved: C:\Users\ylchen\workspace\timesfm\finetune_usa\finetune_expts\eval_results.json
+[01:26:43] 
+Checkpoint disk usage:
+[01:26:43]   best/  925 MB
+[01:26:43]   last/  (removed or not saved)
+[01:26:43] 
+Done: USA ¡X IMPROVED

@@ -1,0 +1,285 @@
+Loaded 3382_T.npy: 4918 points
+Loaded 4519_T.npy: 4918 points
+Loaded 6501_T.npy: 4918 points
+Loaded 6758_T.npy: 4918 points
+Loaded 7203_T.npy: 4918 points
+Loaded 7974_T.npy: 4918 points
+Loaded 8306_T.npy: 4918 points
+Loaded 9432_T.npy: 4918 points
+Loaded 9984_T.npy: 4918 points
+Loaded IDX_N225.npy: 4887 points
+Total sliding windows: 340
+Train: 255 samples, Val: 85 samples
+Loading model from: google/timesfm-2.5-200m-pytorch
+Downloaded.
+Froze first 15 of 20 transformer layers
+Total params: 231,289,280 | Trainable params: 83,752,880 (36.2%)
+Using AdamW optimizer (lr=0.0001, weight_decay=0.01)
+Gradient accumulation: 16 steps (effective batch = 128)
+LR scheduler: cosine with 5-epoch warmup
+  Epoch 1 step 10/32 | loss=0.010153 lr=0.00e+00
+  Epoch 1 step 20/32 | loss=0.049223 lr=1.00e-05
+  Epoch 1 step 30/32 | loss=0.024971 lr=1.00e-05
+Epoch 1 train | loss=0.027846
+Epoch 1 val   | loss=0.047752
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 2 step 10/32 | loss=0.035135 lr=2.00e-05
+  Epoch 2 step 20/32 | loss=0.042825 lr=3.00e-05
+  Epoch 2 step 30/32 | loss=0.010815 lr=3.00e-05
+Epoch 2 train | loss=0.026806
+Epoch 2 val   | loss=0.043246
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 3 step 10/32 | loss=0.030956 lr=4.00e-05
+  Epoch 3 step 20/32 | loss=0.016499 lr=5.00e-05
+  Epoch 3 step 30/32 | loss=0.029707 lr=5.00e-05
+Epoch 3 train | loss=0.024807
+Epoch 3 val   | loss=0.045067
+  Epoch 4 step 10/32 | loss=0.013827 lr=6.00e-05
+  Epoch 4 step 20/32 | loss=0.014118 lr=7.00e-05
+  Epoch 4 step 30/32 | loss=0.022923 lr=7.00e-05
+Epoch 4 train | loss=0.021208
+Epoch 4 val   | loss=0.041937
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 5 step 10/32 | loss=0.017397 lr=8.00e-05
+  Epoch 5 step 20/32 | loss=0.007433 lr=9.00e-05
+  Epoch 5 step 30/32 | loss=0.017971 lr=9.00e-05
+Epoch 5 train | loss=0.020280
+Epoch 5 val   | loss=0.041292
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 6 step 10/32 | loss=0.016353 lr=1.00e-04
+  Epoch 6 step 20/32 | loss=0.017094 lr=1.00e-04
+  Epoch 6 step 30/32 | loss=0.005817 lr=1.00e-04
+Epoch 6 train | loss=0.019827
+Epoch 6 val   | loss=0.041738
+  Epoch 7 step 10/32 | loss=0.018708 lr=9.99e-05
+  Epoch 7 step 20/32 | loss=0.033289 lr=9.97e-05
+  Epoch 7 step 30/32 | loss=0.025731 lr=9.97e-05
+Epoch 7 train | loss=0.019332
+Epoch 7 val   | loss=0.040415
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 8 step 10/32 | loss=0.016457 lr=9.95e-05
+  Epoch 8 step 20/32 | loss=0.015713 lr=9.92e-05
+  Epoch 8 step 30/32 | loss=0.014714 lr=9.92e-05
+Epoch 8 train | loss=0.018171
+Epoch 8 val   | loss=0.040579
+  Epoch 9 step 10/32 | loss=0.007202 lr=9.89e-05
+  Epoch 9 step 20/32 | loss=0.014951 lr=9.85e-05
+  Epoch 9 step 30/32 | loss=0.013730 lr=9.85e-05
+Epoch 9 train | loss=0.017575
+Epoch 9 val   | loss=0.038654
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 10 step 10/32 | loss=0.014293 lr=9.81e-05
+  Epoch 10 step 20/32 | loss=0.035770 lr=9.76e-05
+  Epoch 10 step 30/32 | loss=0.029893 lr=9.76e-05
+Epoch 10 train | loss=0.016835
+Epoch 10 val   | loss=0.039629
+  Epoch 11 step 10/32 | loss=0.009921 lr=9.70e-05
+  Epoch 11 step 20/32 | loss=0.017143 lr=9.64e-05
+  Epoch 11 step 30/32 | loss=0.016649 lr=9.64e-05
+Epoch 11 train | loss=0.015785
+Epoch 11 val   | loss=0.038635
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 12 step 10/32 | loss=0.005960 lr=9.57e-05
+  Epoch 12 step 20/32 | loss=0.016831 lr=9.49e-05
+  Epoch 12 step 30/32 | loss=0.013287 lr=9.49e-05
+Epoch 12 train | loss=0.014839
+Epoch 12 val   | loss=0.039045
+  Epoch 13 step 10/32 | loss=0.029137 lr=9.41e-05
+  Epoch 13 step 20/32 | loss=0.010320 lr=9.33e-05
+  Epoch 13 step 30/32 | loss=0.007301 lr=9.33e-05
+Epoch 13 train | loss=0.014454
+Epoch 13 val   | loss=0.040248
+  Epoch 14 step 10/32 | loss=0.019186 lr=9.24e-05
+  Epoch 14 step 20/32 | loss=0.018032 lr=9.15e-05
+  Epoch 14 step 30/32 | loss=0.024081 lr=9.15e-05
+Epoch 14 train | loss=0.013249
+Epoch 14 val   | loss=0.040952
+  Epoch 15 step 10/32 | loss=0.013579 lr=9.05e-05
+  Epoch 15 step 20/32 | loss=0.008280 lr=8.94e-05
+  Epoch 15 step 30/32 | loss=0.007181 lr=8.94e-05
+Epoch 15 train | loss=0.012100
+Epoch 15 val   | loss=0.039223
+  Epoch 16 step 10/32 | loss=0.009839 lr=8.83e-05
+  Epoch 16 step 20/32 | loss=0.012045 lr=8.72e-05
+  Epoch 16 step 30/32 | loss=0.007902 lr=8.72e-05
+Epoch 16 train | loss=0.012294
+Epoch 16 val   | loss=0.038844
+  Epoch 17 step 10/32 | loss=0.012289 lr=8.60e-05
+  Epoch 17 step 20/32 | loss=0.008585 lr=8.47e-05
+  Epoch 17 step 30/32 | loss=0.009345 lr=8.47e-05
+Epoch 17 train | loss=0.011559
+Epoch 17 val   | loss=0.038058
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 18 step 10/32 | loss=0.012299 lr=8.35e-05
+  Epoch 18 step 20/32 | loss=0.006328 lr=8.21e-05
+  Epoch 18 step 30/32 | loss=0.006880 lr=8.21e-05
+Epoch 18 train | loss=0.010504
+Epoch 18 val   | loss=0.041286
+  Epoch 19 step 10/32 | loss=0.009897 lr=8.08e-05
+  Epoch 19 step 20/32 | loss=0.019939 lr=7.94e-05
+  Epoch 19 step 30/32 | loss=0.003912 lr=7.94e-05
+Epoch 19 train | loss=0.009580
+Epoch 19 val   | loss=0.038585
+  Epoch 20 step 10/32 | loss=0.010747 lr=7.80e-05
+  Epoch 20 step 20/32 | loss=0.009927 lr=7.65e-05
+  Epoch 20 step 30/32 | loss=0.007690 lr=7.65e-05
+Epoch 20 train | loss=0.009465
+Epoch 20 val   | loss=0.039551
+  Epoch 21 step 10/32 | loss=0.007941 lr=7.50e-05
+  Epoch 21 step 20/32 | loss=0.010896 lr=7.35e-05
+  Epoch 21 step 30/32 | loss=0.009800 lr=7.35e-05
+Epoch 21 train | loss=0.008385
+Epoch 21 val   | loss=0.038193
+  Epoch 22 step 10/32 | loss=0.007243 lr=7.19e-05
+  Epoch 22 step 20/32 | loss=0.004314 lr=7.03e-05
+  Epoch 22 step 30/32 | loss=0.005124 lr=7.03e-05
+Epoch 22 train | loss=0.008472
+Epoch 22 val   | loss=0.039456
+  Epoch 23 step 10/32 | loss=0.005107 lr=6.87e-05
+  Epoch 23 step 20/32 | loss=0.011738 lr=6.71e-05
+  Epoch 23 step 30/32 | loss=0.007159 lr=6.71e-05
+Epoch 23 train | loss=0.007414
+Epoch 23 val   | loss=0.036908
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 24 step 10/32 | loss=0.004028 lr=6.55e-05
+  Epoch 24 step 20/32 | loss=0.009165 lr=6.38e-05
+  Epoch 24 step 30/32 | loss=0.010801 lr=6.38e-05
+Epoch 24 train | loss=0.007273
+Epoch 24 val   | loss=0.042013
+  Epoch 25 step 10/32 | loss=0.008097 lr=6.21e-05
+  Epoch 25 step 20/32 | loss=0.006088 lr=6.04e-05
+  Epoch 25 step 30/32 | loss=0.008804 lr=6.04e-05
+Epoch 25 train | loss=0.006431
+Epoch 25 val   | loss=0.038269
+  Epoch 26 step 10/32 | loss=0.008896 lr=5.87e-05
+  Epoch 26 step 20/32 | loss=0.008548 lr=5.70e-05
+  Epoch 26 step 30/32 | loss=0.003825 lr=5.70e-05
+Epoch 26 train | loss=0.006575
+Epoch 26 val   | loss=0.040857
+  Epoch 27 step 10/32 | loss=0.009029 lr=5.52e-05
+  Epoch 27 step 20/32 | loss=0.003605 lr=5.35e-05
+  Epoch 27 step 30/32 | loss=0.004145 lr=5.35e-05
+Epoch 27 train | loss=0.006066
+Epoch 27 val   | loss=0.039401
+  Epoch 28 step 10/32 | loss=0.005922 lr=5.17e-05
+  Epoch 28 step 20/32 | loss=0.004441 lr=5.00e-05
+  Epoch 28 step 30/32 | loss=0.003539 lr=5.00e-05
+Epoch 28 train | loss=0.005877
+Epoch 28 val   | loss=0.039223
+  Epoch 29 step 10/32 | loss=0.002599 lr=4.83e-05
+  Epoch 29 step 20/32 | loss=0.004129 lr=4.65e-05
+  Epoch 29 step 30/32 | loss=0.008130 lr=4.65e-05
+Epoch 29 train | loss=0.006384
+Epoch 29 val   | loss=0.036339
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 30 step 10/32 | loss=0.006273 lr=4.48e-05
+  Epoch 30 step 20/32 | loss=0.007585 lr=4.30e-05
+  Epoch 30 step 30/32 | loss=0.004803 lr=4.30e-05
+Epoch 30 train | loss=0.005826
+Epoch 30 val   | loss=0.038436
+  Epoch 31 step 10/32 | loss=0.003557 lr=4.13e-05
+  Epoch 31 step 20/32 | loss=0.023780 lr=3.96e-05
+  Epoch 31 step 30/32 | loss=0.002673 lr=3.96e-05
+Epoch 31 train | loss=0.005588
+Epoch 31 val   | loss=0.040754
+  Epoch 32 step 10/32 | loss=0.015987 lr=3.79e-05
+  Epoch 32 step 20/32 | loss=0.005242 lr=3.62e-05
+  Epoch 32 step 30/32 | loss=0.004450 lr=3.62e-05
+Epoch 32 train | loss=0.005134
+Epoch 32 val   | loss=0.038720
+  Epoch 33 step 10/32 | loss=0.009297 lr=3.45e-05
+  Epoch 33 step 20/32 | loss=0.004358 lr=3.29e-05
+  Epoch 33 step 30/32 | loss=0.006567 lr=3.29e-05
+Epoch 33 train | loss=0.004800
+Epoch 33 val   | loss=0.043031
+  Epoch 34 step 10/32 | loss=0.005604 lr=3.13e-05
+  Epoch 34 step 20/32 | loss=0.016187 lr=2.97e-05
+  Epoch 34 step 30/32 | loss=0.004287 lr=2.97e-05
+Epoch 34 train | loss=0.005187
+Epoch 34 val   | loss=0.039084
+  Epoch 35 step 10/32 | loss=0.006176 lr=2.81e-05
+  Epoch 35 step 20/32 | loss=0.006664 lr=2.65e-05
+  Epoch 35 step 30/32 | loss=0.004635 lr=2.65e-05
+Epoch 35 train | loss=0.004963
+Epoch 35 val   | loss=0.042899
+  Epoch 36 step 10/32 | loss=0.003927 lr=2.50e-05
+  Epoch 36 step 20/32 | loss=0.004956 lr=2.35e-05
+  Epoch 36 step 30/32 | loss=0.004455 lr=2.35e-05
+Epoch 36 train | loss=0.004579
+Epoch 36 val   | loss=0.037709
+  Epoch 37 step 10/32 | loss=0.006312 lr=2.20e-05
+  Epoch 37 step 20/32 | loss=0.004433 lr=2.06e-05
+  Epoch 37 step 30/32 | loss=0.003435 lr=2.06e-05
+Epoch 37 train | loss=0.004786
+Epoch 37 val   | loss=0.039740
+  Epoch 38 step 10/32 | loss=0.003614 lr=1.92e-05
+  Epoch 38 step 20/32 | loss=0.003689 lr=1.79e-05
+  Epoch 38 step 30/32 | loss=0.002748 lr=1.79e-05
+Epoch 38 train | loss=0.004685
+Epoch 38 val   | loss=0.038595
+  Epoch 39 step 10/32 | loss=0.006746 lr=1.65e-05
+  Epoch 39 step 20/32 | loss=0.003400 lr=1.53e-05
+  Epoch 39 step 30/32 | loss=0.003390 lr=1.53e-05
+Epoch 39 train | loss=0.004883
+Epoch 39 val   | loss=0.042053
+  Epoch 40 step 10/32 | loss=0.004847 lr=1.40e-05
+  Epoch 40 step 20/32 | loss=0.004374 lr=1.28e-05
+  Epoch 40 step 30/32 | loss=0.003174 lr=1.28e-05
+Epoch 40 train | loss=0.004443
+Epoch 40 val   | loss=0.037759
+  Epoch 41 step 10/32 | loss=0.003984 lr=1.17e-05
+  Epoch 41 step 20/32 | loss=0.004161 lr=1.06e-05
+  Epoch 41 step 30/32 | loss=0.005630 lr=1.06e-05
+Epoch 41 train | loss=0.004176
+Epoch 41 val   | loss=0.039185
+  Epoch 42 step 10/32 | loss=0.002540 lr=9.55e-06
+  Epoch 42 step 20/32 | loss=0.004478 lr=8.55e-06
+  Epoch 42 step 30/32 | loss=0.003918 lr=8.55e-06
+Epoch 42 train | loss=0.004152
+Epoch 42 val   | loss=0.035277
+Updated best checkpoint at finetune_japan\checkpoints\run_glia_2b\best
+  Epoch 43 step 10/32 | loss=0.002502 lr=7.60e-06
+  Epoch 43 step 20/32 | loss=0.006068 lr=6.70e-06
+  Epoch 43 step 30/32 | loss=0.003769 lr=6.70e-06
+Epoch 43 train | loss=0.004209
+Epoch 43 val   | loss=0.037299
+  Epoch 44 step 10/32 | loss=0.003325 lr=5.85e-06
+  Epoch 44 step 20/32 | loss=0.004480 lr=5.06e-06
+  Epoch 44 step 30/32 | loss=0.002915 lr=5.06e-06
+Epoch 44 train | loss=0.004251
+Epoch 44 val   | loss=0.038828
+  Epoch 45 step 10/32 | loss=0.003471 lr=4.32e-06
+  Epoch 45 step 20/32 | loss=0.003298 lr=3.64e-06
+  Epoch 45 step 30/32 | loss=0.004638 lr=3.64e-06
+Epoch 45 train | loss=0.004219
+Epoch 45 val   | loss=0.038937
+  Epoch 46 step 10/32 | loss=0.005544 lr=3.02e-06
+  Epoch 46 step 20/32 | loss=0.003133 lr=2.45e-06
+  Epoch 46 step 30/32 | loss=0.003636 lr=2.45e-06
+Epoch 46 train | loss=0.004443
+Epoch 46 val   | loss=0.037807
+  Epoch 47 step 10/32 | loss=0.002432 lr=1.94e-06
+  Epoch 47 step 20/32 | loss=0.003515 lr=1.49e-06
+  Epoch 47 step 30/32 | loss=0.002851 lr=1.49e-06
+Epoch 47 train | loss=0.004322
+Epoch 47 val   | loss=0.040673
+  Epoch 48 step 10/32 | loss=0.004271 lr=1.09e-06
+  Epoch 48 step 20/32 | loss=0.009032 lr=7.60e-07
+  Epoch 48 step 30/32 | loss=0.003558 lr=7.60e-07
+Epoch 48 train | loss=0.004589
+Epoch 48 val   | loss=0.038703
+  Epoch 49 step 10/32 | loss=0.003835 lr=4.87e-07
+  Epoch 49 step 20/32 | loss=0.004374 lr=2.74e-07
+  Epoch 49 step 30/32 | loss=0.007003 lr=2.74e-07
+Epoch 49 train | loss=0.004521
+Epoch 49 val   | loss=0.040491
+  Epoch 50 step 10/32 | loss=0.004961 lr=1.22e-07
+  Epoch 50 step 20/32 | loss=0.004136 lr=3.05e-08
+  Epoch 50 step 30/32 | loss=0.008781 lr=3.05e-08
+Epoch 50 train | loss=0.004275
+Epoch 50 val   | loss=0.038190
+Saved last checkpoint to finetune_japan\checkpoints\run_glia_2b\last
+
+Training complete. Best val loss: 0.035277 (epoch 42)

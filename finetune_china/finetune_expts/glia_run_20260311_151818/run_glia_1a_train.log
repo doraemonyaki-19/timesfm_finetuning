@@ -1,0 +1,217 @@
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D6C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 573f8be2-a5e3-4c63-9677-644be511c2dd)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D6C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 573f8be2-a5e3-4c63-9677-644be511c2dd)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+WARNING:huggingface_hub.utils._http:Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D6F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e03a1bc5-1e24-439e-a852-4fc0fe6b8adf)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D6F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e03a1bc5-1e24-439e-a852-4fc0fe6b8adf)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+WARNING:huggingface_hub.utils._http:Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D330>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 3904d7dc-8d9b-4467-b14a-49a0e90a088b)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D330>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 3904d7dc-8d9b-4467-b14a-49a0e90a088b)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+WARNING:huggingface_hub.utils._http:Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9EA70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 11598264-cdf1-42ea-af80-c714af96ebbc)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9EA70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 11598264-cdf1-42ea-af80-c714af96ebbc)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+WARNING:huggingface_hub.utils._http:Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9EE00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 8533bc52-f62b-40da-abab-1a92b41479a3)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9EE00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 8533bc52-f62b-40da-abab-1a92b41479a3)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+WARNING:huggingface_hub.utils._http:Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D540>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 2bd1b6f4-31b3-4ae8-a9fd-fe13b88ebf55)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+WARNING:huggingface_hub.utils._http:'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /google/timesfm-2.5-200m-pytorch/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000174F1F9D540>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 2bd1b6f4-31b3-4ae8-a9fd-fe13b88ebf55)')' thrown while requesting HEAD https://huggingface.co/google/timesfm-2.5-200m-pytorch/resolve/main/config.json
+Loaded 0005_HK.npy: 4926 points
+Loaded 0700_HK.npy: 4926 points
+Loaded 0941_HK.npy: 4926 points
+Loaded 1299_HK.npy: 3783 points
+Loaded 2318_HK.npy: 4926 points
+Loaded IDX_HSI.npy: 4920 points
+Total sliding windows: 385
+Train: 289 samples, Val: 96 samples
+Loading model from: google/timesfm-2.5-200m-pytorch
+Downloaded.
+Froze first 17 of 20 transformer layers
+Total params: 231,289,280 | Trainable params: 64,081,360 (27.7%)
+Using AdamW optimizer (lr=0.0001, weight_decay=0.01)
+Gradient accumulation: 16 steps (effective batch = 128)
+LR scheduler: cosine with 5-epoch warmup
+  Epoch 1 step 10/37 | loss=0.017762 lr=0.00e+00
+  Epoch 1 step 20/37 | loss=0.066547 lr=1.00e-05
+  Epoch 1 step 30/37 | loss=0.050926 lr=1.00e-05
+Epoch 1 train | loss=0.047012
+Epoch 1 val   | loss=0.045178
+Updated best checkpoint at finetune_china\checkpoints\run_glia_1a\best
+  Epoch 2 step 10/37 | loss=0.021310 lr=3.00e-05
+  Epoch 2 step 20/37 | loss=0.050227 lr=4.00e-05
+  Epoch 2 step 30/37 | loss=0.018948 lr=4.00e-05
+Epoch 2 train | loss=0.047724
+Epoch 2 val   | loss=0.039823
+Updated best checkpoint at finetune_china\checkpoints\run_glia_1a\best
+  Epoch 3 step 10/37 | loss=0.063150 lr=6.00e-05
+  Epoch 3 step 20/37 | loss=0.030378 lr=7.00e-05
+  Epoch 3 step 30/37 | loss=0.049799 lr=7.00e-05
+Epoch 3 train | loss=0.048779
+Epoch 3 val   | loss=0.038497
+Updated best checkpoint at finetune_china\checkpoints\run_glia_1a\best
+  Epoch 4 step 10/37 | loss=0.158552 lr=9.00e-05
+  Epoch 4 step 20/37 | loss=0.038442 lr=1.00e-04
+  Epoch 4 step 30/37 | loss=0.008687 lr=1.00e-04
+Epoch 4 train | loss=0.046732
+Epoch 4 val   | loss=0.036665
+Updated best checkpoint at finetune_china\checkpoints\run_glia_1a\best
+  Epoch 5 step 10/37 | loss=0.130208 lr=9.99e-05
+  Epoch 5 step 20/37 | loss=0.034219 lr=9.97e-05
+  Epoch 5 step 30/37 | loss=0.032239 lr=9.97e-05
+Epoch 5 train | loss=0.049693
+Epoch 5 val   | loss=0.040376
+  Epoch 6 step 10/37 | loss=0.023914 lr=9.92e-05
+  Epoch 6 step 20/37 | loss=0.063047 lr=9.89e-05
+  Epoch 6 step 30/37 | loss=0.038346 lr=9.89e-05
+Epoch 6 train | loss=0.052845
+Epoch 6 val   | loss=0.041793
+  Epoch 7 step 10/37 | loss=0.059684 lr=9.81e-05
+  Epoch 7 step 20/37 | loss=0.096199 lr=9.76e-05
+  Epoch 7 step 30/37 | loss=0.021383 lr=9.76e-05
+Epoch 7 train | loss=0.049836
+Epoch 7 val   | loss=0.039621
+  Epoch 8 step 10/37 | loss=0.133189 lr=9.64e-05
+  Epoch 8 step 20/37 | loss=0.020725 lr=9.57e-05
+  Epoch 8 step 30/37 | loss=0.124267 lr=9.57e-05
+Epoch 8 train | loss=0.049043
+Epoch 8 val   | loss=0.039282
+  Epoch 9 step 10/37 | loss=0.074024 lr=9.41e-05
+  Epoch 9 step 20/37 | loss=0.023698 lr=9.33e-05
+  Epoch 9 step 30/37 | loss=0.056750 lr=9.33e-05
+Epoch 9 train | loss=0.048485
+Epoch 9 val   | loss=0.040173
+  Epoch 10 step 10/37 | loss=0.084856 lr=9.15e-05
+  Epoch 10 step 20/37 | loss=0.039975 lr=9.05e-05
+  Epoch 10 step 30/37 | loss=0.030633 lr=9.05e-05
+Epoch 10 train | loss=0.048473
+Epoch 10 val   | loss=0.044516
+  Epoch 11 step 10/37 | loss=0.029127 lr=8.83e-05
+  Epoch 11 step 20/37 | loss=0.020845 lr=8.72e-05
+  Epoch 11 step 30/37 | loss=0.019026 lr=8.72e-05
+Epoch 11 train | loss=0.049380
+Epoch 11 val   | loss=0.039539
+  Epoch 12 step 10/37 | loss=0.060969 lr=8.47e-05
+  Epoch 12 step 20/37 | loss=0.027972 lr=8.35e-05
+  Epoch 12 step 30/37 | loss=0.039527 lr=8.35e-05
+Epoch 12 train | loss=0.050958
+Epoch 12 val   | loss=0.038827
+  Epoch 13 step 10/37 | loss=0.034074 lr=8.08e-05
+  Epoch 13 step 20/37 | loss=0.046413 lr=7.94e-05
+  Epoch 13 step 30/37 | loss=0.039721 lr=7.94e-05
+Epoch 13 train | loss=0.046160
+Epoch 13 val   | loss=0.038595
+  Epoch 14 step 10/37 | loss=0.032894 lr=7.65e-05
+  Epoch 14 step 20/37 | loss=0.039250 lr=7.50e-05
+  Epoch 14 step 30/37 | loss=0.042974 lr=7.50e-05
+Epoch 14 train | loss=0.051572
+Epoch 14 val   | loss=0.039411
+  Epoch 15 step 10/37 | loss=0.022098 lr=7.19e-05
+  Epoch 15 step 20/37 | loss=0.076126 lr=7.03e-05
+  Epoch 15 step 30/37 | loss=0.011987 lr=7.03e-05
+Epoch 15 train | loss=0.050504
+Epoch 15 val   | loss=0.039102
+  Epoch 16 step 10/37 | loss=0.080063 lr=6.71e-05
+  Epoch 16 step 20/37 | loss=0.032246 lr=6.55e-05
+  Epoch 16 step 30/37 | loss=0.030376 lr=6.55e-05
+Epoch 16 train | loss=0.049876
+Epoch 16 val   | loss=0.038872
+  Epoch 17 step 10/37 | loss=0.020765 lr=6.21e-05
+  Epoch 17 step 20/37 | loss=0.093941 lr=6.04e-05
+  Epoch 17 step 30/37 | loss=0.066407 lr=6.04e-05
+Epoch 17 train | loss=0.045995
+Epoch 17 val   | loss=0.039385
+  Epoch 18 step 10/37 | loss=0.021874 lr=5.70e-05
+  Epoch 18 step 20/37 | loss=0.100681 lr=5.52e-05
+  Epoch 18 step 30/37 | loss=0.028509 lr=5.52e-05
+Epoch 18 train | loss=0.047670
+Epoch 18 val   | loss=0.039271
+  Epoch 19 step 10/37 | loss=0.098821 lr=5.17e-05
+  Epoch 19 step 20/37 | loss=0.036280 lr=5.00e-05
+  Epoch 19 step 30/37 | loss=0.060245 lr=5.00e-05
+Epoch 19 train | loss=0.050058
+Epoch 19 val   | loss=0.035757
+Updated best checkpoint at finetune_china\checkpoints\run_glia_1a\best
+  Epoch 20 step 10/37 | loss=0.018522 lr=4.65e-05
+  Epoch 20 step 20/37 | loss=0.025595 lr=4.48e-05
+  Epoch 20 step 30/37 | loss=0.020056 lr=4.48e-05
+Epoch 20 train | loss=0.049039
+Epoch 20 val   | loss=0.041428
+  Epoch 21 step 10/37 | loss=0.022522 lr=4.13e-05
+  Epoch 21 step 20/37 | loss=0.024715 lr=3.96e-05
+  Epoch 21 step 30/37 | loss=0.021172 lr=3.96e-05
+Epoch 21 train | loss=0.049184
+Epoch 21 val   | loss=0.040046
+  Epoch 22 step 10/37 | loss=0.038290 lr=3.62e-05
+  Epoch 22 step 20/37 | loss=0.090125 lr=3.45e-05
+  Epoch 22 step 30/37 | loss=0.018404 lr=3.45e-05
+Epoch 22 train | loss=0.052049
+Epoch 22 val   | loss=0.038472
+  Epoch 23 step 10/37 | loss=0.041254 lr=3.13e-05
+  Epoch 23 step 20/37 | loss=0.084431 lr=2.97e-05
+  Epoch 23 step 30/37 | loss=0.037877 lr=2.97e-05
+Epoch 23 train | loss=0.048471
+Epoch 23 val   | loss=0.041438
+  Epoch 24 step 10/37 | loss=0.049214 lr=2.65e-05
+  Epoch 24 step 20/37 | loss=0.008129 lr=2.50e-05
+  Epoch 24 step 30/37 | loss=0.060344 lr=2.50e-05
+Epoch 24 train | loss=0.051682
+Epoch 24 val   | loss=0.041856
+  Epoch 25 step 10/37 | loss=0.045083 lr=2.20e-05
+  Epoch 25 step 20/37 | loss=0.010399 lr=2.06e-05
+  Epoch 25 step 30/37 | loss=0.091924 lr=2.06e-05
+Epoch 25 train | loss=0.047681
+Epoch 25 val   | loss=0.038313
+  Epoch 26 step 10/37 | loss=0.022841 lr=1.79e-05
+  Epoch 26 step 20/37 | loss=0.011564 lr=1.65e-05
+  Epoch 26 step 30/37 | loss=0.018011 lr=1.65e-05
+Epoch 26 train | loss=0.050424
+Epoch 26 val   | loss=0.039630
+  Epoch 27 step 10/37 | loss=0.070150 lr=1.40e-05
+  Epoch 27 step 20/37 | loss=0.052616 lr=1.28e-05
+  Epoch 27 step 30/37 | loss=0.030648 lr=1.28e-05
+Epoch 27 train | loss=0.048582
+Epoch 27 val   | loss=0.041411
+  Epoch 28 step 10/37 | loss=0.017525 lr=1.06e-05
+  Epoch 28 step 20/37 | loss=0.083945 lr=9.55e-06
+  Epoch 28 step 30/37 | loss=0.016627 lr=9.55e-06
+Epoch 28 train | loss=0.048105
+Epoch 28 val   | loss=0.040314
+  Epoch 29 step 10/37 | loss=0.052118 lr=7.60e-06
+  Epoch 29 step 20/37 | loss=0.041002 lr=6.70e-06
+  Epoch 29 step 30/37 | loss=0.067083 lr=6.70e-06
+Epoch 29 train | loss=0.047419
+Epoch 29 val   | loss=0.041577
+  Epoch 30 step 10/37 | loss=0.059281 lr=5.06e-06
+  Epoch 30 step 20/37 | loss=0.080983 lr=4.32e-06
+  Epoch 30 step 30/37 | loss=0.034120 lr=4.32e-06
+Epoch 30 train | loss=0.049460
+Epoch 30 val   | loss=0.042051
+  Epoch 31 step 10/37 | loss=0.058661 lr=3.02e-06
+  Epoch 31 step 20/37 | loss=0.024839 lr=2.45e-06
+  Epoch 31 step 30/37 | loss=0.043325 lr=2.45e-06
+Epoch 31 train | loss=0.052269
+Epoch 31 val   | loss=0.040576
+  Epoch 32 step 10/37 | loss=0.082808 lr=1.49e-06
+  Epoch 32 step 20/37 | loss=0.048439 lr=1.09e-06
+  Epoch 32 step 30/37 | loss=0.024019 lr=1.09e-06
+Epoch 32 train | loss=0.048832
+Epoch 32 val   | loss=0.040994
+  Epoch 33 step 10/37 | loss=0.072189 lr=4.87e-07
+  Epoch 33 step 20/37 | loss=0.117898 lr=2.74e-07
+  Epoch 33 step 30/37 | loss=0.085803 lr=2.74e-07
+Epoch 33 train | loss=0.048086
+Epoch 33 val   | loss=0.041005
+  Epoch 34 step 10/37 | loss=0.038801 lr=3.05e-08
+  Epoch 34 step 20/37 | loss=0.039218 lr=0.00e+00
+  Epoch 34 step 30/37 | loss=0.025220 lr=0.00e+00
+Epoch 34 train | loss=0.059260
+Epoch 34 val   | loss=0.039836
+
+Early stopping: no val improvement for 15 epochs (best was epoch 19)
+Saved last checkpoint to finetune_china\checkpoints\run_glia_1a\last
+
+Training complete. Best val loss: 0.035757 (epoch 19)

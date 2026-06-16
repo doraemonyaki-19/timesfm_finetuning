@@ -1,0 +1,41 @@
+{
+  "args": {
+    "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\finetune_china\\checkpoints\\run_glia_2a\\best",
+    "tickers": "0388.HK,2382.HK,1177.HK",
+    "horizons": "120",
+    "cache_dir": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\finetune_china\\data\\eval",
+    "max_context": 512,
+    "n_windows": 15,
+    "base_model": "C:/Users/ylchen/workspace/timesfm_finetuning/model",
+    "seed": 42,
+    "strict_tickers": false,
+    "results_file": null
+  },
+  "per_ticker": {
+    "0388.HK": {
+      "120": {
+        "mape": 8.321209319432576,
+        "dir_acc": 50.08403361344538
+      }
+    },
+    "2382.HK": {
+      "120": {
+        "mape": 25.807161712646483,
+        "dir_acc": 48.347338935574236
+      }
+    },
+    "1177.HK": {
+      "120": {
+        "mape": 24.095507431030274,
+        "dir_acc": 48.73949579831933
+      }
+    }
+  },
+  "average": {
+    "120": {
+      "mape": 19.40795948770311,
+      "dir_acc": 49.05695611577965
+    }
+  },
+  "primary_120d_mape": 19.40795948770311
+}
