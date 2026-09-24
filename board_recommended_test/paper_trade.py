@@ -33,6 +33,7 @@ import csv
 import datetime
 import json
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -79,6 +80,13 @@ CASH_WEIGHT = 0.10
 SINGLE_NAME_SHORT_CAP = 0.03      # 3% of notional per short position
 STOP_LOSS_PCT = -0.10             # -10% on short position -> close
 MAX_NET_SHORT_EXPOSURE = 0.40     # 40% of notional max net short
+
+# Cell-level stop (board resolution 2026-09-08): if a cell's current cohort
+# reaches this realized + unrealized P&L (net of borrow) as a fraction of cell
+# capital, flatten the whole cell to cash until its next scheduled rebalance.
+CELL_STOP_LOSS_PCT = {
+    "europe_60": -0.075,          # -$11,250 on the $150k Europe 60d cell
+}
 
 DEFAULT_BORROW_RATE = 0.015       # 1.5% annualized
 
@@ -136,6 +144,63 @@ def download_price(ticker):
     return float(close[-1])
 
 
+def _extract_last_closes(df, tickers):
+    """Pull the latest non-NaN close per ticker out of a yfinance frame.
+
+    Handles both the multi-ticker MultiIndex layout (field, ticker) and the
+    single-ticker flat layout. Tickers with no usable data are omitted so the
+    caller can tell fresh prices from stale ones.
+    """
+    out = {}
+    if df is None or df.empty:
+        return out
+    if isinstance(df.columns, pd.MultiIndex):
+        if "Close" not in df.columns.get_level_values(0):
+            return out
+        close = df["Close"]
+        for t in tickers:
+            if t in close.columns:
+                s = close[t].dropna()
+                if len(s):
+                    out[t] = float(s.iloc[-1])
+    else:
+        if "Close" in df.columns and len(tickers) == 1:
+            s = df["Close"].dropna()
+            if len(s):
+                out[tickers[0]] = float(s.iloc[-1])
+    return out
+
+
+def download_prices_batch(all_tickers, retries=3, backoff=2.0):
+    """Download latest close prices for many tickers in a single request.
+
+    Uses one batched yf.download call instead of one-per-ticker (the sequential
+    pattern was rate-limited into silent failure). Retries with backoff, and on
+    partial success only re-requests the tickers still missing. Returns a dict
+    ticker -> latest close; failed tickers are simply absent from the dict.
+    """
+    end = datetime.datetime.now(datetime.timezone.utc).date()
+    start = end - datetime.timedelta(days=10)
+    pending = list(dict.fromkeys(all_tickers))  # de-dup, preserve order
+    prices = {}
+    for attempt in range(retries):
+        if not pending:
+            break
+        try:
+            df = yf.download(pending, start=start.isoformat(),
+                             end=end.isoformat(), progress=False,
+                             group_by="column", threads=True)
+        except Exception as e:  # network / parsing failure -> retry
+            print(f"    (batch download attempt {attempt + 1} failed: {e})")
+            df = None
+        if df is not None:
+            prices.update(_extract_last_closes(df, pending))
+            pending = [t for t in pending if t not in prices]
+        if pending and attempt < retries - 1:
+            time.sleep(backoff * (attempt + 1))
+    return prices
+
+
 def download_context(ticker, years=20):
     """Download full history for forecasting."""
     end = datetime.datetime.now(datetime.timezone.utc).date()
@@ -152,11 +217,18 @@ def download_context(ticker, years=20):
 def load_model(checkpoint_path, max_horizon):
     import timesfm
     import os
-    if os.path.isdir(checkpoint_path):
+    cp = str(checkpoint_path)
+    if not os.path.isdir(cp):
+        alt_path = cp.replace(r"workspace\timesfm\finetune_", r"workspace\timesfm_finetuning\finetune_").replace("workspace/timesfm/finetune_", "workspace/timesfm_finetuning/finetune_")
+        if os.path.isdir(alt_path):
+            cp = alt_path
+        elif (ROOT / cp).is_dir():
+            cp = str(ROOT / cp)
+    if os.path.isdir(cp):
         model = timesfm.TimesFM_2p5_200M_torch.from_pretrained(
-            checkpoint_path, local_files_only=True)
+            cp, local_files_only=True)
     else:
-        model = timesfm.TimesFM_2p5_200M_torch.from_pretrained(checkpoint_path)
+        model = timesfm.TimesFM_2p5_200M_torch.from_pretrained(cp)
     model.compile(timesfm.ForecastConfig(
         max_context=MAX_CONTEXT, max_horizon=max_horizon, **FORECAST_CONFIG))
     return model
@@ -190,6 +262,29 @@ def append_journal(trades):
             writer.writeheader()
         for t in trades:
             writer.writerow(t)
+
+
+def cell_cohort_pnl(ck, cohort_open, open_cohort, closed_this_run):
+    """Net P&L (after borrow) of a cell's current cohort.
+
+    The cohort is every position in cell `ck` opened on or after `cohort_open`:
+    trades already closed in the journal (e.g. earlier position stop-outs),
+    trades closed earlier in this run, and the still-open positions.
+    """
+    def in_cohort(t):
+        return (cell_key(t["region"], int(t["horizon"])) == ck
+                and t["open_date"] >= cohort_open)
+
+    closed = [t for t in closed_this_run if in_cohort(t)]
+    if JOURNAL_FILE.exists():
+        with open(JOURNAL_FILE, encoding="utf-8") as f:
+            closed += [t for t in csv.DictReader(f) if in_cohort(t)]
+
+    pnl = sum(float(t["realized_pnl"]) - float(t["borrow_cost"])
+              for t in closed)
+    pnl += sum(p.get("unrealized_pnl", 0) - p.get("accrued_borrow", 0)
+               for p in open_cohort)
+    return pnl
 
 
 def next_trade_id(state):
@@ -375,6 +470,7 @@ def cmd_run(args):
     print("=" * 70)
 
     closed_trades = []
+    stale_tickers = []
 
     # ── Step 1: Mark-to-market open positions ─────────────────────────────
 
@@ -392,12 +488,20 @@ def cmd_run(args):
                 prices[t] = 100.0 + rng.normal(0, 10)
         else:
             print("    Downloading prices...", flush=True)
-            for t in all_tickers:
-                p = download_price(t)
-                if p is not None:
-                    prices[t] = p
-                else:
-                    print(f"    WARNING: No price for {t}, using last known")
+            prices = download_prices_batch(all_tickers)
+            missing = sorted(t for t in all_tickers if t not in prices)
+            stale_tickers = missing
+            if not prices:
+                # Every download failed. Do NOT advance the lifecycle on stale
+                # prices -- leave state untouched so the failure stays visible.
+                print(f"    ERROR: all {len(all_tickers)} price downloads failed"
+                      " -- aborting run, state unchanged (no stale MTM/expiry).")
+                sys.exit(1)
+            if missing:
+                print(f"    WARNING: no fresh price for {len(missing)}/"
+                      f"{len(all_tickers)} tickers: {', '.join(missing)}")
+                print("    -> these positions keep last-known price; "
+                      "MTM / borrow / expiry NOT advanced for them")
 
         for pos in open_pos:
             t = pos["ticker"]
@@ -460,6 +564,55 @@ def cmd_run(args):
 
     if stopped_count:
         print(f"    {stopped_count} position(s) stopped out")
+
+    # ── Step 2b: Enforce cell-level stop-losses ───────────────────────────
+
+    for ck, stop_pct in CELL_STOP_LOSS_PCT.items():
+        cell = state["cells"].get(ck)
+        if cell is None:
+            continue
+        cohort = [p for p in still_open
+                  if cell_key(p["region"], p["horizon"]) == ck]
+        if not cohort:
+            continue
+        cohort_open = min(p["open_date"] for p in cohort)
+        cell_capital = notional * cell["weight"]
+        limit = stop_pct * cell_capital
+        cohort_pnl = cell_cohort_pnl(ck, cohort_open, cohort, closed_trades)
+        label = cell_label(cell["region"], cell["horizon"])
+        print(f"    Cell stop {label}: cohort P&L ${cohort_pnl:+,.2f} "
+              f"(limit ${limit:,.2f})")
+        if cohort_pnl > limit:
+            continue
+
+        # Cell stop triggered: flatten every remaining position in the cell
+        print(f"    CELL STOP-LOSS: {label} cohort P&L ${cohort_pnl:+,.2f} "
+              f"<= ${limit:,.2f} -- flattening {len(cohort)} position(s) "
+              f"until {cell.get('next_rebalance', '?')}")
+        for pos in cohort:
+            closed_trades.append({
+                "trade_id": pos["trade_id"],
+                "open_date": pos["open_date"],
+                "close_date": today,
+                "region": pos["region"],
+                "horizon": pos["horizon"],
+                "cell": pos["cell"],
+                "strategy": pos["strategy"],
+                "ticker": pos["ticker"],
+                "model": pos["model"],
+                "signal": pos["signal"],
+                "entry_price": pos["entry_price"],
+                "exit_price": pos.get("current_price", pos["entry_price"]),
+                "position_usd": pos["position_usd"],
+                "realized_pnl": round(pos.get("unrealized_pnl", 0), 2),
+                "borrow_cost": round(pos.get("accrued_borrow", 0), 2),
+                "close_reason": "CELL-STOP",
+                "days_held": pos.get("days_held", 0),
+            })
+            print(f"      closed {pos['ticker']} "
+                  f"P&L=${pos.get('unrealized_pnl', 0):+,.2f}")
+        cell["cell_stopped"] = today
+        still_open = [p for p in still_open if p not in cohort]
 
     # ── Step 3: Close expired positions ───────────────────────────────────
 
@@ -594,6 +747,7 @@ def cmd_run(args):
         next_date = (datetime.date.fromisoformat(today)
                      + datetime.timedelta(days=int(horizon * 1.5)))
         cell["next_rebalance"] = str(next_date)
+        cell.pop("cell_stopped", None)
 
     if opened_count:
         print(f"\n    {opened_count} new position(s) opened")
@@ -611,6 +765,12 @@ def cmd_run(args):
     # ── Summary ───────────────────────────────────────────────────────────
 
     _print_summary(state)
+
+    # ── Optional Markdown report ──────────────────────────────────────────
+
+    if getattr(args, "report", False):
+        path = generate_report(state, closed_trades, stale_tickers, today)
+        print(f"\n  MTM report written to: {path}")
 
 
 def cmd_status(args):
@@ -776,11 +936,181 @@ def _print_summary(state):
             status = "BLOCKED"
         elif n > 0:
             status = f"{n} open"
+        elif cell.get("cell_stopped"):
+            status = (f"CELL-STOPPED {cell['cell_stopped']}, "
+                      f"rebal {cell.get('next_rebalance', '?')}")
         else:
             status = f"empty, rebal {cell.get('next_rebalance', '?')}"
         print(f"    {cell_label(cell['region'], cell['horizon']):>15s}  "
               f"{cell['weight']*100:>5.1f}%  {cell['strategy'].upper():>3s}  "
               f"[{status}]")
+
+
+# ── Report ────────────────────────────────────────────────────────────────
+
+def _governance_ok(state):
+    notional = state["notional"]
+    open_pos = state["open_positions"]
+    total_short = sum(p["position_usd"] for p in open_pos if p["position_usd"] < 0)
+    net_short_pct = abs(total_short) / notional * 100 if notional else 0
+    for p in open_pos:
+        if p["position_usd"] < 0:
+            if abs(p["position_usd"]) / notional > SINGLE_NAME_SHORT_CAP + 0.001:
+                return False
+    return net_short_pct <= MAX_NET_SHORT_EXPOSURE * 100
+
+
+def generate_report(state, closed_this_run, stale_tickers, today):
+    """Write mtm_{today}.md: factual tables auto-filled from state + journal,
+    narrative sections stubbed as TODO for hand-editing. Returns the path.
+
+    The dated Markdown reports were previously hand-written; this emits the
+    same skeleton so a report exists for every run without manual bookkeeping.
+    """
+    notional = state["notional"]
+    open_pos = state["open_positions"]
+
+    # Realized P&L across the full journal history
+    realized = 0.0
+    n_closed_all = 0
+    if JOURNAL_FILE.exists():
+        with open(JOURNAL_FILE, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                realized += float(row["realized_pnl"])
+                n_closed_all += 1
+
+    unreal = sum(p.get("unrealized_pnl", 0) for p in open_pos)
+    accrued = sum(p.get("accrued_borrow", 0) for p in open_pos)
+    net = realized + unreal - accrued
+    net_pct = net / notional * 100 if notional else 0
+
+    total_long = sum(p["position_usd"] for p in open_pos if p["position_usd"] > 0)
+    total_short = sum(p["position_usd"] for p in open_pos if p["position_usd"] < 0)
+    net_exp = total_long + total_short
+    days = max((p.get("days_held", 0) for p in open_pos), default=0)
+
+    # Per-cell unrealized, sorted best-to-worst
+    cells = {}
+    for p in open_pos:
+        c = cells.setdefault(p["cell"], {"pnl": 0.0, "n": 0, "L": 0, "S": 0})
+        c["pnl"] += p.get("unrealized_pnl", 0)
+        c["n"] += 1
+        if p["position_usd"] > 0:
+            c["L"] += 1
+        elif p["position_usd"] < 0:
+            c["S"] += 1
+
+    ranked = sorted(open_pos, key=lambda p: p.get("unrealized_pnl", 0))
+
+    def pos_row(p):
+        return (f"| {p['ticker']} | {p['cell']} | {p['signal']} | "
+                f"{p['entry_price']:g} → {p.get('current_price', 0):g} | "
+                f"${p.get('unrealized_pnl', 0):+,.0f} |")
+
+    L = []
+    L.append(f"# Mark-to-Market Report — {today}")
+    L.append("")
+    L.append(f"**Notional:** ${notional:,.0f}. **Days held:** {days} trading days. "
+             f"**Governance:** {'PASS' if _governance_ok(state) else 'FAIL'}.")
+    L.append("")
+    L.append("<!-- AUTO-GENERATED skeleton. Fill the TODO narrative sections by hand. -->")
+    L.append("")
+    L.append("## Headline")
+    L.append("")
+    L.append(f"**Net P&L to-date: ${net:+,.0f} ({net_pct:+.2f}% of notional)** "
+             f"after {days} trading days.")
+    L.append("")
+    L.append("<!-- TODO: one paragraph on what drove the move this run. -->")
+    L.append("")
+    L.append("| | Amount |")
+    L.append("|---|---|")
+    L.append(f"| Realized P&L ({n_closed_all} closed) | ${realized:+,.0f} |")
+    L.append(f"| Unrealized P&L ({len(open_pos)} open) | ${unreal:+,.0f} |")
+    L.append(f"| Accrued borrow | ${-accrued:+,.0f} |")
+    L.append(f"| **Net** | **${net:+,.0f} ({net_pct:+.2f}%)** |")
+    L.append("")
+
+    L.append("## Trades closed this run")
+    L.append("")
+    if closed_this_run:
+        L.append("| Ticker | Cell | Signal | Entry | Exit | P&L | Reason |")
+        L.append("|--------|------|--------|-------|------|-----|--------|")
+        for t in closed_this_run:
+            L.append(f"| {t['ticker']} | {t['cell']} | {t['signal']} | "
+                     f"{t['entry_price']:g} | {t['exit_price']:g} | "
+                     f"${t['realized_pnl']:+,.0f} | {t['close_reason']} |")
+    else:
+        L.append("None — no stop-losses or expiries this run.")
+    L.append("")
+
+    L.append("## Open P&L by cell")
+    L.append("")
+    L.append("| Cell | Unreal P&L | n | L / S |")
+    L.append("|------|-----------:|---|-------|")
+    for cell in sorted(cells, key=lambda x: -cells[x]["pnl"]):
+        c = cells[cell]
+        L.append(f"| {cell} | ${c['pnl']:+,.0f} | {c['n']} | "
+                 f"{c['L']}L / {c['S']}S |")
+    L.append("")
+    L.append(f"Exposure: {total_long/notional*100:.1f}% long / "
+             f"{abs(total_short)/notional*100:.1f}% short "
+             f"(net {net_exp/notional*100:+.1f}%). "
+             f"Cash ${state.get('cash', 0):,.0f}.")
+    L.append("")
+
+    L.append("## Winners and losers")
+    L.append("")
+    L.append("**Top 5 by unrealized P&L:**")
+    L.append("")
+    L.append("| Ticker | Cell | Signal | Entry → Current | Unreal P&L |")
+    L.append("|--------|------|--------|-----------------|-----------:|")
+    for p in reversed(ranked[-5:]):
+        L.append(pos_row(p))
+    L.append("")
+    L.append("**Bottom 5 by unrealized P&L:**")
+    L.append("")
+    L.append("| Ticker | Cell | Signal | Entry → Current | Unreal P&L |")
+    L.append("|--------|------|--------|-----------------|-----------:|")
+    for p in ranked[:5]:
+        L.append(pos_row(p))
+    L.append("")
+
+    if stale_tickers:
+        L.append("## Data-pipeline note")
+        L.append("")
+        L.append(f"{len(stale_tickers)} ticker(s) had no fresh price this run and kept "
+                 f"last-known marks (MTM/borrow/expiry not advanced for them): "
+                 f"{', '.join(sorted(stale_tickers))}.")
+        L.append("")
+
+    L.append("## Reading it honestly")
+    L.append("")
+    L.append("<!-- TODO: is this signal or noise? What's realized vs unrealized, "
+             "concentration, carried risks. -->")
+    L.append("")
+
+    L.append("## Rebalance / expiry schedule")
+    L.append("")
+    L.append("| Cell | Next rebalance | Status |")
+    L.append("|------|----------------|--------|")
+    active = {cell_key(p["region"], p["horizon"]) for p in open_pos}
+    for ck, cell in state.get("cells", {}).items():
+        cl = cell_label(cell["region"], cell["horizon"])
+        if cell.get("blocked"):
+            status = "BLOCKED"
+        elif ck in active:
+            status = "open"
+        elif cell.get("cell_stopped"):
+            status = f"cell-stopped {cell['cell_stopped']}"
+        else:
+            status = "empty"
+        L.append(f"| {cl} | {cell.get('next_rebalance', '?')} | {status} |")
+    L.append("")
+
+    out_path = TRADE_DIR / f"mtm_{today}.md"
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(L))
+    return out_path
 
 
 # ── Main ──────────────────────────────────────────────────────────────────
@@ -803,6 +1133,8 @@ def main():
     p_run = subparsers.add_parser("run", help="Daily run")
     p_run.add_argument("--dry-run", action="store_true",
                        help="Use random prices/signals")
+    p_run.add_argument("--report", action="store_true",
+                       help="Also write mtm_{date}.md report skeleton")
 
     # status
     subparsers.add_parser("status", help="Show current portfolio")
