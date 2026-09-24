@@ -1,6 +1,6 @@
 {
   "region": "europe",
-  "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm\\finetune_europe\\checkpoints\\run_glia_v2_1a\\best",
+  "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\finetune_europe\\checkpoints\\run_glia_v2_1a\\best",
   "label": "EUv2",
   "date": "2026-04-11",
   "n_windows": 30,

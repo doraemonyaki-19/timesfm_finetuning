@@ -1,0 +1,490 @@
+===================================================================== 
+MTM run 06/22/2026 Mon  9:27:48.75 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-06-22)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+
+1 Failed download:
+['AMZN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AZN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['UL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['MSFT']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['9984.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['SAP']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['7974.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['GS']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['EADSF']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['SHEL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['7203.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['1299.HK']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['0005.HK']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['DEO']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['6902.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['CVX']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['NVO']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AAPL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['JPM']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['META']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['UNH']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['6758.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['KO']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['4502.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['4661.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['BA']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['GOOGL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['NVDA']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['8306.T']: TypeError("'NoneType' object is not subscriptable")
+    WARNING: No price for AMZN, using last known
+    WARNING: No price for AZN, using last known
+    WARNING: No price for UL, using last known
+    WARNING: No price for MSFT, using last known
+    WARNING: No price for 9984.T, using last known
+    WARNING: No price for SAP, using last known
+    WARNING: No price for 7974.T, using last known
+    WARNING: No price for GS, using last known
+    WARNING: No price for EADSF, using last known
+    WARNING: No price for SHEL, using last known
+    WARNING: No price for 7203.T, using last known
+    WARNING: No price for 1299.HK, using last known
+    WARNING: No price for 0005.HK, using last known
+    WARNING: No price for DEO, using last known
+    WARNING: No price for 6902.T, using last known
+    WARNING: No price for CVX, using last known
+    WARNING: No price for NVO, using last known
+    WARNING: No price for AAPL, using last known
+    WARNING: No price for JPM, using last known
+    WARNING: No price for META, using last known
+    WARNING: No price for UNH, using last known
+    WARNING: No price for 6758.T, using last known
+    WARNING: No price for KO, using last known
+    WARNING: No price for 4502.T, using last known
+    WARNING: No price for 4661.T, using last known
+    WARNING: No price for BA, using last known
+    WARNING: No price for GOOGL, using last known
+    WARNING: No price for NVDA, using last known
+    WARNING: No price for 8306.T, using last known
+
+  Notional:        $1,000,000.00
+  Open positions:  33 long, 6 short
+  Long exposure:   $  494,444.41  (49.4%)
+  Short exposure:  $ -138,888.89  (13.9%)
+  Net exposure:    $  355,555.52  (35.6%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $   +6,567.27
+  Accrued borrow:  $      125.57
+
+  Governance:
+    PASS: Short cap (3%), net short (13.9% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [7 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [5 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [5 open]
+             US 60d   10.0%   LF  [12 open]
+ 
+===================================================================== 
+MTM run 06/29/2026 Mon  9:00:00.38 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-06-29)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+===================================================================== 
+MTM run 07/06/2026 Mon  9:29:11.55 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-07-06)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+
+1 Failed download:
+['MSFT']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['SAP']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['4502.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AAPL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['EADSF']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['1299.HK']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['GOOGL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['6902.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['UNH']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['BA']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['NVDA']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['SHEL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['7974.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['DEO']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['6758.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AZN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['0005.HK']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['KO']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['8306.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['4661.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['9984.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['7203.T']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['META']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['CVX']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['JPM']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['UL']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['GS']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['AMZN']: TypeError("'NoneType' object is not subscriptable")
+
+1 Failed download:
+['NVO']: TypeError("'NoneType' object is not subscriptable")
+    WARNING: No price for MSFT, using last known
+    WARNING: No price for SAP, using last known
+    WARNING: No price for 4502.T, using last known
+    WARNING: No price for AAPL, using last known
+    WARNING: No price for EADSF, using last known
+    WARNING: No price for 1299.HK, using last known
+    WARNING: No price for GOOGL, using last known
+    WARNING: No price for 6902.T, using last known
+    WARNING: No price for UNH, using last known
+    WARNING: No price for BA, using last known
+    WARNING: No price for NVDA, using last known
+    WARNING: No price for SHEL, using last known
+    WARNING: No price for 7974.T, using last known
+    WARNING: No price for DEO, using last known
+    WARNING: No price for 6758.T, using last known
+    WARNING: No price for AZN, using last known
+    WARNING: No price for 0005.HK, using last known
+    WARNING: No price for KO, using last known
+    WARNING: No price for 8306.T, using last known
+    WARNING: No price for 4661.T, using last known
+    WARNING: No price for 9984.T, using last known
+    WARNING: No price for 7203.T, using last known
+    WARNING: No price for META, using last known
+    WARNING: No price for CVX, using last known
+    WARNING: No price for JPM, using last known
+    WARNING: No price for UL, using last known
+    WARNING: No price for GS, using last known
+    WARNING: No price for AMZN, using last known
+    WARNING: No price for NVO, using last known
+
+  Notional:        $1,000,000.00
+  Open positions:  33 long, 6 short
+  Long exposure:   $  494,444.41  (49.4%)
+  Short exposure:  $ -138,888.89  (13.9%)
+  Net exposure:    $  355,555.52  (35.6%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $   +6,567.27
+  Accrued borrow:  $      125.57
+
+  Governance:
+    PASS: Short cap (3%), net short (13.9% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [7 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [5 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [5 open]
+             US 60d   10.0%   LF  [12 open]
+ 
+===================================================================== 
+MTM run 07/12/2026 Sun  9:51:44.38 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-07-12)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+
+  Notional:        $1,000,000.00
+  Open positions:  33 long, 6 short
+  Long exposure:   $  494,444.41  (49.4%)
+  Short exposure:  $ -138,888.89  (13.9%)
+  Net exposure:    $  355,555.52  (35.6%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $  +17,076.00
+  Accrued borrow:  $      239.73
+
+  Governance:
+    PASS: Short cap (3%), net short (13.9% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [7 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [5 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [5 open]
+             US 60d   10.0%   LF  [12 open]
+ 
+===================================================================== 
+MTM run 07/13/2026 Mon  9:00:00.72 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-07-13)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+===================================================================== 
+MTM run 07/20/2026 Mon  9:04:06.98 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-07-20)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+
+  Notional:        $1,000,000.00
+  Open positions:  33 long, 6 short
+  Long exposure:   $  494,444.41  (49.4%)
+  Short exposure:  $ -138,888.89  (13.9%)
+  Net exposure:    $  355,555.52  (35.6%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $  +21,941.47
+  Accrued borrow:  $      268.26
+
+  Governance:
+    PASS: Short cap (3%), net short (13.9% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [7 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [5 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [5 open]
+             US 60d   10.0%   LF  [12 open]
+ 
+===================================================================== 
+MTM run 07/27/2026 Mon 10:02:49.41 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-07-27)
+======================================================================
+
+  Mark-to-Market (39 open positions):
+    Downloading prices...
+    STOP-LOSS: EADSF P&L=$-3,327.97 (-12.0%)
+    1 position(s) stopped out
+
+  Journal: 1 trade(s) closed, appended to C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\journal.csv
+
+  Notional:        $1,000,000.00
+  Open positions:  33 long, 5 short
+  Long exposure:   $  494,444.41  (49.4%)
+  Short exposure:  $ -111,111.11  (11.1%)
+  Net exposure:    $  383,333.30  (38.3%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $  +23,711.12
+  Accrued borrow:  $      237.44
+
+  Governance:
+    PASS: Short cap (3%), net short (11.1% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [6 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [5 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [5 open]
+             US 60d   10.0%   LF  [12 open]
+ 
+===================================================================== 
+MTM run 08/03/2026 Mon  9:00:00.72 
+===================================================================== 
+MTM run 08/10/2026 Mon  9:00:00.70 
+===================================================================== 
+MTM run 08/24/2026 Mon  9:00:01.22 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-08-24)
+======================================================================
+
+  Mark-to-Market (38 open positions):
+    Downloading prices...
+
+1 Failed download:
+['NVO']: TypeError("'NoneType' object is not subscriptable")
+    STOP-LOSS: DEO P&L=$-4,839.91 (-17.4%)
+    1 position(s) stopped out
+    EXPIRED: UL (EUROPE 60d) 72d held, P&L=$+1,976.51
+    EXPIRED: EADSF (EUROPE 60d) 72d held, P&L=$+2,475.04
+    EXPIRED: SAP (EUROPE 60d) 72d held, P&L=$+5,532.55
+    EXPIRED: NVO (EUROPE 60d) 72d held, P&L=$+342.07
+    EXPIRED: SHEL (EUROPE 60d) 72d held, P&L=$+1,739.44
+    EXPIRED: 6902.T (JAPAN 60d) 72d held, P&L=$-380.40
+    EXPIRED: 4661.T (JAPAN 60d) 72d held, P&L=$+4,436.17
+    EXPIRED: 7203.T (JAPAN 60d) 72d held, P&L=$+458.04
+    EXPIRED: 4502.T (JAPAN 60d) 72d held, P&L=$+1,073.90
+    EXPIRED: 7974.T (JAPAN 60d) 72d held, P&L=$+2,808.53
+    EXPIRED: NVDA (US 60d) 72d held, P&L=$-743.05
+    EXPIRED: UNH (US 60d) 72d held, P&L=$-187.51
+    EXPIRED: GS (US 60d) 72d held, P&L=$+604.77
+    EXPIRED: CVX (US 60d) 72d held, P&L=$+831.82
+    EXPIRED: KO (US 60d) 72d held, P&L=$+1,103.17
+    EXPIRED: BA (US 60d) 72d held, P&L=$-545.71
+    EXPIRED: AAPL (US 60d) 72d held, P&L=$+311.30
+    EXPIRED: MSFT (US 60d) 72d held, P&L=$+1,502.29
+    EXPIRED: AMZN (US 60d) 72d held, P&L=$-267.88
+    EXPIRED: GOOGL (US 60d) 72d held, P&L=$-1,168.75
+    EXPIRED: META (US 60d) 72d held, P&L=$-923.44
+    EXPIRED: JPM (US 60d) 72d held, P&L=$+1,435.71
+    22 position(s) expired
+
+  Opening: EUROPE 60d (15%, LSF):
+    Dead zone: 2.0%
+Traceback (most recent call last):
+  File "C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\paper_trade.py", line 1066, in <module>
+    main()
+  File "C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\paper_trade.py", line 1058, in main
+    cmd_run(args)
+  File "C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\paper_trade.py", line 602, in cmd_run
+    forecasts = forecast_cell(region, horizon, all_tickers, dry_run=dry_run)
+  File "C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\paper_trade.py", line 339, in forecast_cell
+    model = load_model(ft_path, horizon)
+  File "C:\Users\ylchen\workspace\timesfm_finetuning\board_recommended_test\paper_trade.py", line 217, in load_model
+    model = timesfm.TimesFM_2p5_200M_torch.from_pretrained(checkpoint_path)
+  File "C:\Users\ylchen\workspace\timesfm\.venv\lib\site-packages\huggingface_hub\utils\_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\ylchen\workspace\timesfm\.venv\lib\site-packages\huggingface_hub\hub_mixin.py", line 506, in from_pretrained
+    config_file = hf_hub_download(
+  File "C:\Users\ylchen\workspace\timesfm\.venv\lib\site-packages\huggingface_hub\utils\_validators.py", line 85, in _inner_fn
+    validate_repo_id(arg_value)
+  File "C:\Users\ylchen\workspace\timesfm\.venv\lib\site-packages\huggingface_hub\utils\_validators.py", line 135, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must use alphanumeric chars, '-', '_' or '.'. The name cannot start or end with '-' or '.' and the maximum length is 96: 'C:\Users\ylchen\workspace\timesfm\finetune_europe\checkpoints\run_glia_v2_1a\best'.
+ 
+===================================================================== 
+MTM run 09/21/2026 Mon  9:00:00.99 
+======================================================================
+PAPER TRADE -- DAILY RUN (2026-09-21)
+======================================================================
+
+  Mark-to-Market (33 open positions):
+    Downloading prices...
+
+  Notional:        $1,000,000.00
+  Open positions:  22 long, 11 short
+  Long exposure:   $  363,888.86  (36.4%)
+  Short exposure:  $ -194,444.46  (19.4%)
+  Net exposure:    $  169,444.40  (16.9%)
+  Cash:            $  100,000.00
+  Unrealized P&L:  $  +38,248.34
+  Accrued borrow:  $      318.26
+
+  Governance:
+    PASS: Short cap (3%), net short (19.4% <= 40%), blocklist
+
+  Cell Status:
+        EUROPE 120d   25.0%  LSF  [5 open]
+         JAPAN 120d   20.0%  LSF  [8 open]
+         EUROPE 60d   15.0%  LSF  [6 open]
+         CHINA 120d   10.0%   LF  [2 open]
+          JAPAN 60d   10.0%  LSF  [7 open]
+             US 60d   10.0%   LF  [5 open]
+ 

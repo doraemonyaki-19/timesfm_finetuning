@@ -1,6 +1,6 @@
 {
   "region": "japan",
-  "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm\\finetune_japan\\checkpoints\\run_glia_t2_r2a\\best",
+  "checkpoint": "C:\\Users\\ylchen\\workspace\\timesfm_finetuning\\finetune_japan\\checkpoints\\run_glia_t2_r2a\\best",
   "label": "hdecay1.0",
   "date": "2026-04-11",
   "n_windows": 30,
